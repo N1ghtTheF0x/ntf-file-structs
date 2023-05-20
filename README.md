@@ -1,3 +1,3 @@
-# ntf-template
+# ntf-file-structs
 
-Template for my C++ projects
+Headers for common and rare file types

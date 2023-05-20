@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.22)
 
-set(NTF_PROJECT_NAME "template") # Name of program (Use this for linking)
+set(NTF_PROJECT_NAME "file-structs") # Name of program (Use this for linking)
 set(NTF_TYPE "LIB") # LIB: Compile a library, EXE: Compile a executable. NOTICE: when EXE then the main.cpp will be included
 set(NTF_MAJOR_VERSION 1) # Major version of program
 set(NTF_MINOR_VERSION 0) # Minor version of program
@@ -13,7 +13,7 @@ set(NTF_VERSION ${NTF_MAJOR_VERSION}.${NTF_MINOR_VERSION}.${NTF_PATCH_VERSION}.$
 # appended to project name and output
 set(NTF_PREFIX "ntf")
 
-project(${NTF_PROJECT_NAME} VERSION ${NTF_VERSION} DESCRIPTION "description goes here" HOMEPAGE_URL "https://github.com/N1ghtTheF0x/"  LANGUAGES CXX C)
+project(${NTF_PROJECT_NAME} VERSION ${NTF_VERSION} DESCRIPTION "Headers for common and rare file types" HOMEPAGE_URL "https://github.com/N1ghtTheF0x/cpp-file-structs"  LANGUAGES CXX C)
 
 # Output compiled programs to lib/bin folders in the current working directory
 # https://stackoverflow.com/a/6595001
@@ -68,6 +68,10 @@ endif()
 # add_subdirectory(...) or find_package(...)
 # target_link_libraries(${NTF_PROJECT_NAME} PRIVATE ...)
 # target_include_directories(${NTF_PROJECT_NAME} PRIVATE ...)
+
+add_subdirectory(buffer)
+target_link_libraries(${NTF_PROJECT_NAME} PRIVATE buffer)
+target_include_directories(${NTF_PROJECT_NAME} PRIVATE buffer/include)
 
 # include local include folder
 target_include_directories(${NTF_PROJECT_NAME} PRIVATE include)
