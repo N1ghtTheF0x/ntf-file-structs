@@ -1,0 +1,3 @@
+[submodule "Buffer"]
+	path = buffer
+	url = https://github.com/N1ghtTheF0x/cpp-buffer
